@@ -31,6 +31,14 @@ public class PluginSettings {
     @SerializedName("users")
     private String users;
 
+    @Expose
+    @SerializedName("webhook")
+    private String webhook;
+
+    @Expose
+    @SerializedName("keyword")
+    private String keyword;
+
     public static PluginSettings fromJSON(String json) {
         return GSON.fromJson(json, PluginSettings.class);
     }
@@ -38,5 +46,13 @@ public class PluginSettings {
 
     public String getUsers() {
         return users;
+    }
+
+    public String getWebhook() {
+        return webhook;
+    }
+
+    public String getKeyword() {
+        return keyword;
     }
 }

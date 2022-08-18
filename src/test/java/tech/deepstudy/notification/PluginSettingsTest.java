@@ -25,9 +25,13 @@ public class PluginSettingsTest {
     @Test
     public void shouldDeserializeFromJSON() throws Exception {
         PluginSettings pluginSettings = PluginSettings.fromJSON("{" +
-                "\"users\": \"sheltonsuen@163.com/bcx_8h10aurb9|shexx@163.com/xxx\"" +
+                "\"users\": \"sheltonsuen@163.com/bcx_8h10aurb9|shexx@163.com/xxx\", " +
+                "\"webhook\": \"https://webhook\", " +
+                "\"keyword\": \"foobar\"" +
                 "}");
 
         assertThat(pluginSettings.getUsers(), is("sheltonsuen@163.com/bcx_8h10aurb9|shexx@163.com/xxx"));
+        assertThat(pluginSettings.getKeyword(), is("foobar"));
+        assertThat(pluginSettings.getWebhook(), is("https://webhook"));
     }
 }
