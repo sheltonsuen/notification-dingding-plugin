@@ -16,12 +16,6 @@
 
 package tech.deepstudy.notification;
 
-import tech.deepstudy.notification.executors.GetPluginConfigurationExecutor;
-import tech.deepstudy.notification.executors.GetViewRequestExecutor;
-import tech.deepstudy.notification.executors.NotificationInterestedInExecutor;
-import tech.deepstudy.notification.requests.AgentStatusRequest;
-import tech.deepstudy.notification.requests.StageStatusRequest;
-import tech.deepstudy.notification.requests.ValidatePluginSettings;
 import com.thoughtworks.go.plugin.api.GoApplicationAccessor;
 import com.thoughtworks.go.plugin.api.GoPlugin;
 import com.thoughtworks.go.plugin.api.GoPluginIdentifier;
@@ -30,11 +24,17 @@ import com.thoughtworks.go.plugin.api.exceptions.UnhandledRequestTypeException;
 import com.thoughtworks.go.plugin.api.logging.Logger;
 import com.thoughtworks.go.plugin.api.request.GoPluginApiRequest;
 import com.thoughtworks.go.plugin.api.response.GoPluginApiResponse;
+import tech.deepstudy.notification.executors.GetPluginConfigurationExecutor;
+import tech.deepstudy.notification.executors.GetViewRequestExecutor;
+import tech.deepstudy.notification.executors.NotificationInterestedInExecutor;
+import tech.deepstudy.notification.requests.AgentStatusRequest;
+import tech.deepstudy.notification.requests.StageStatusRequest;
+import tech.deepstudy.notification.requests.ValidatePluginSettings;
 
 @Extension
-public class ExamplePlugin implements GoPlugin {
+public class DingDingPlugin implements GoPlugin {
 
-    public static final Logger LOG = Logger.getLoggerFor(ExamplePlugin.class);
+    public static final Logger LOG = Logger.getLoggerFor(DingDingPlugin.class);
 
     private GoApplicationAccessor accessor;
     private PluginRequest pluginRequest;
