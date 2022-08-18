@@ -16,14 +16,13 @@
 
 package tech.deepstudy.notification.executors;
 
-import tech.deepstudy.notification.RequestExecutor;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.thoughtworks.go.plugin.api.response.DefaultGoPluginApiResponse;
 import com.thoughtworks.go.plugin.api.response.GoPluginApiResponse;
+import tech.deepstudy.notification.RequestExecutor;
 
-import static tech.deepstudy.notification.Request.REQUEST_AGENT_STATUS;
 import static tech.deepstudy.notification.Request.REQUEST_STAGE_STATUS;
 
 public class NotificationInterestedInExecutor implements RequestExecutor {
@@ -34,7 +33,6 @@ public class NotificationInterestedInExecutor implements RequestExecutor {
         JsonObject jsonObject = new JsonObject();
         JsonArray notifications = new JsonArray();
         notifications.add(REQUEST_STAGE_STATUS.requestName());
-        notifications.add(REQUEST_AGENT_STATUS.requestName());
         jsonObject.add("notifications", notifications);
 
         DefaultGoPluginApiResponse defaultGoPluginApiResponse = new DefaultGoPluginApiResponse(200);
