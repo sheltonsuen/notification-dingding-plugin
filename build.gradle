@@ -16,7 +16,7 @@
 
 apply plugin: 'java'
 
-group = 'com.example.notification.template'
+group = 'tech.deepstudy.notification.dingding'
 version = '0.1-SNAPSHOT'
 
 // these values that go into plugin.xml
